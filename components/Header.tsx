@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { ChevronDownIcon, HomeIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid'
+import AuthButton from './AuthButton'
 
 export default function Header() {
   return (
@@ -14,12 +15,14 @@ export default function Header() {
         />
       </div>
 
+      {/* Home Icon */}
       <div className="mx-7 flex items-center xl:min-w-[300px]">
         <HomeIcon className="h-5 w-5"/>
         <p className="ml-2 hidden flex-1 lg:inline">Home</p>
         <ChevronDownIcon className="h-5 w-5"/>
       </div>
 
+      {/* Search Box */}
       <form className='flex flex-1 items-center space-x-2 rounded-sm border border-gray-200 bg-gray-100'>
         <MagnifyingGlassIcon className='h-7 w-7 text-gray-400 pl-2'/>
         <input type="text" placeholder="Search Reddit Clone" className='flex-1 bg-transparent outline-none'/>
@@ -27,9 +30,10 @@ export default function Header() {
       </form>
 
       {/* Signin / Signout */}
-      <div>
-        
+      <div className='felx bg-gray-200 rounded align-middle items-center p-2 ml-2 mr-2 cursor-pointer'>
+        <AuthButton/>
       </div>
+
     </div>
   )
 }
